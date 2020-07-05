@@ -3,19 +3,20 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilenames
 from pathlib import Path
 from PIL import Image
-from time import sleep
 
 
-def open_explorer():
+def choose_files():
 	Tk().withdraw()
 	filenames = askopenfilenames(
 		initialdir = "/",
 		title = "Select file",
 		filetypes = (("png files","*.png"),)
-		)
+	)
+	if len(filenames) == 0: quit()
+	return filenames
 
 
-def png_to_ico():
+def png_to_ico(filenames):
 	counter = 0
 	for file in filenames:
 		p = Path(file)
@@ -29,11 +30,10 @@ def png_to_ico():
 		img.save(f'{fname}.ico', format = 'ICO')
 		counter += 1
 		print(counter, 'image(s) converted.')
+
 	print('Images converted successfully.')
 
 
 def main():
 	ctypes.windll.shcore.SetProcessDpiAwareness(True)
-	open_explorer()
-	png_to_ico()
-	sleep(1)
+	png_to_ico(choose_files())

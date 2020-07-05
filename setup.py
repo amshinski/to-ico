@@ -18,7 +18,12 @@ setuptools.setup(
         "License :: MIT License",
         "Operating System :: OS Independent",
     ],
+    keywords=['ico', 'console', 'convert', 'image'],
     python_requires='>=3.6',
+    install_requires=[
+       "Pillow",
+    ],
+    scripts=['to_ico/to_ico.py'],
     entry_points={
         'console_scripts': ['to-ico=to_ico:main']
     },
