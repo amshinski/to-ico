@@ -32,7 +32,7 @@ def png_to_ico():
 	print('Images converted successfully.')
 
 
-if __name__ == '__main__':
+def main():
 	ctypes.windll.shcore.SetProcessDpiAwareness(True)
 	open_explorer()
 	png_to_ico()

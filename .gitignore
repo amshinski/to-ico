@@ -1,1 +1,6 @@
 /tests
+
+/build
+/dist
+
+/to_ico.egg-info
