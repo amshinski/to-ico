@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="to-ico",
-    version="1.0.0",
+    version="1.1",
     author="amshinski",
     author_email="amshinski@gmail.com",
     description="A small png to ico convertor script. Just type 'to-ico' in console.",
